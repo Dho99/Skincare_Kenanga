@@ -1,4 +1,5 @@
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
       <body className="font-sans antialiased text-fabish-text bg-fabish-cream selection:bg-fabish-pink">
         {children}
+        <Toaster richColors position="top-right" />
       </body>
     </html>
   );
