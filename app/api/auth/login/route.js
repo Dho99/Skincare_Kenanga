@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import prisma from '@/lib/prisma';
-import { verifyToken } from '@/lib/auth';
+import supabase from '@/lib/supabase';
 import bcrypt from 'bcryptjs';
+import { signToken } from '@/lib/auth';
 
 export async function POST(request) {
     try {
@@ -14,10 +14,14 @@ export async function POST(request) {
             );
         }
 
-        // Cari admin di database
-        const admin = await prisma.admin.findUnique({ where: { username } });
+        // Cari admin di Supabase
+        const { data: admin, error } = await supabase
+            .from('admins')
+            .select('*')
+            .eq('username', username)
+            .single();
 
-        if (!admin) {
+        if (error || !admin) {
             return NextResponse.json(
                 { error: 'Invalid username or password' },
                 { status: 401 }
@@ -35,7 +39,6 @@ export async function POST(request) {
         }
 
         // Generate JWT
-        const { signToken } = await import('@/lib/auth');
         const token = signToken({ id: admin.id, username: admin.username, role: 'admin' });
 
         return NextResponse.json({

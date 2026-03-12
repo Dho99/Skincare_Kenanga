@@ -13,6 +13,7 @@
     "seed": "node prisma/seed.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.99.1",
     "axios": "^1.13.5",
     "bcryptjs": "^3.0.3",
     "framer-motion": "^12.34.0",
@@ -24,15 +25,11 @@
     "sonner": "^2.0.7"
   },
   "devDependencies": {
-    "@prisma/client": "^5.22.0",
     "@tailwindcss/postcss": "^4.1.18",
     "autoprefixer": "^10.4.24",
-    "dotenv": "^17.3.1",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "postcss": "^8.5.6",
-    "prisma": "^5.22.0",
-    "tailwindcss": "^4.1.18",
-    "tsx": "^4.21.0"
+    "tailwindcss": "^4.1.18"
   }
 }
