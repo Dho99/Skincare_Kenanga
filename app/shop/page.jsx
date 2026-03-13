@@ -6,9 +6,12 @@ import { Star } from "lucide-react";
 
 async function getAllProducts() {
     try {
-        const res = await fetch("http://localhost:3000/api/products", {
-            cache: "no-store",
-        });
+        const res = await fetch(
+            `${process.env.NEXT_PUBLIC_APP_URL}/api/products`,
+            {
+                cache: "no-store",
+            },
+        );
         if (!res.ok) throw new Error("Failed to fetch products");
         return res.json();
     } catch (e) {
@@ -33,9 +36,12 @@ export default async function ShopPage() {
                 <RenderingBadge mode="SSR" />
 
                 <div className="text-center mb-16">
-                    <h1 className="text-5xl font-serif text-fabish-text mb-4">Shop All Products</h1>
+                    <h1 className="text-5xl font-serif text-fabish-text mb-4">
+                        Shop All Products
+                    </h1>
                     <p className="text-gray-500 font-sans max-w-2xl mx-auto">
-                        Explore our complete range of skincare solutions designed to reveal your natural glow.
+                        Explore our complete range of skincare solutions
+                        designed to reveal your natural glow.
                     </p>
                 </div>
 
@@ -60,10 +66,15 @@ export default async function ShopPage() {
 
                                 {/* Content Overlay */}
                                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-white via-white/90 to-transparent pt-12">
-                                    <h3 className="text-2xl font-serif text-fabish-text mb-1">{product.name}</h3>
+                                    <h3 className="text-2xl font-serif text-fabish-text mb-1">
+                                        {product.name}
+                                    </h3>
                                     <div className="flex items-center space-x-1 text-fabish-lime mb-3">
                                         <Star className="w-4 h-4 fill-current" />
-                                        <span className="text-fabish-text/60 text-xs ml-1">{product.rating} ({product.reviews} reviews)</span>
+                                        <span className="text-fabish-text/60 text-xs ml-1">
+                                            {product.rating} ({product.reviews}{" "}
+                                            reviews)
+                                        </span>
                                     </div>
                                     <button className="w-full bg-fabish-text text-white py-3 rounded-xl flex items-center justify-center space-x-2 hover:bg-fabish-green transition-colors font-medium">
                                         <span>Add to Cart</span>

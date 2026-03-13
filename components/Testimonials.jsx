@@ -4,7 +4,7 @@ import Image from "next/image";
 
 async function getTestimonials() {
     try {
-        const res = await fetch("http://localhost:3000/api/testimonials", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/testimonials`, {
             cache: "no-store", // SSR: Dynamic fetch on every request
         });
         if (!res.ok) throw new Error("Failed to fetch testimonials");
