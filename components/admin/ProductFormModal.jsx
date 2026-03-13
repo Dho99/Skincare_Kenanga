@@ -71,7 +71,7 @@ export default function ProductFormModal({ isOpen, product, onClose, onSubmit })
             {/* Slide-in Panel */}
             <div className="relative w-full max-w-md h-full bg-white shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-right duration-300">
                 {/* Header */}
-                <div className="flex items-center justify-between px-6 py-5 border-b border-pink-100 bg-gradient-to-r from-pink-50 to-rose-50">
+                <div className="flex items-center justify-between px-6 py-5 border-b border-fabish-green/10 bg-fabish-cream">
                     <div>
                         <h2 className="text-lg font-bold text-gray-800">
                             {isEdit ? "Edit Product" : "Add New Product"}
@@ -82,7 +82,7 @@ export default function ProductFormModal({ isOpen, product, onClose, onSubmit })
                     </div>
                     <button
                         onClick={onClose}
-                        className="w-8 h-8 rounded-full bg-white border border-pink-100 flex items-center justify-center text-gray-400 hover:text-gray-600 hover:shadow-sm transition-all"
+                        className="w-8 h-8 rounded-full bg-white border border-fabish-green/10 flex items-center justify-center text-gray-400 hover:text-fabish-text hover:shadow-sm transition-all"
                     >
                         <X className="w-4 h-4" />
                     </button>
@@ -101,7 +101,7 @@ export default function ProductFormModal({ isOpen, product, onClose, onSubmit })
                             onChange={handleChange}
                             required
                             placeholder="e.g. Pure Glow Serum"
-                            className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-800 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent transition"
+                            className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-fabish-text placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-fabish-lime focus:border-transparent transition"
                         />
                     </div>
 
@@ -120,7 +120,7 @@ export default function ProductFormModal({ isOpen, product, onClose, onSubmit })
                                 onChange={handleChange}
                                 required
                                 placeholder="0.00"
-                                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-800 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent transition"
+                                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-fabish-text placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-fabish-lime focus:border-transparent transition"
                             />
                         </div>
                         <div>
@@ -131,7 +131,7 @@ export default function ProductFormModal({ isOpen, product, onClose, onSubmit })
                                 name="category"
                                 value={form.category}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent transition bg-white"
+                                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-fabish-text focus:outline-none focus:ring-2 focus:ring-fabish-lime focus:border-transparent transition bg-white"
                             >
                                 <option value="star">⭐ Star</option>
                                 <option value="bestseller">🔥 Bestseller</option>
@@ -150,7 +150,7 @@ export default function ProductFormModal({ isOpen, product, onClose, onSubmit })
                             onChange={handleChange}
                             rows={3}
                             placeholder="Short product description..."
-                            className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-800 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent transition resize-none"
+                            className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-fabish-text placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-fabish-lime focus:border-transparent transition resize-none"
                         />
                     </div>
 
@@ -160,17 +160,17 @@ export default function ProductFormModal({ isOpen, product, onClose, onSubmit })
                             Image Path / URL
                         </label>
                         <div className="relative">
-                            <Upload className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300" />
+                            <Upload className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                             <input
                                 name="image"
                                 value={form.image}
                                 onChange={handleChange}
                                 placeholder="/produk.jpg"
-                                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-800 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent transition"
+                                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 text-sm text-fabish-text placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-fabish-lime focus:border-transparent transition"
                             />
                         </div>
                         {form.image && (
-                            <div className="mt-2 w-16 h-16 rounded-lg overflow-hidden border border-pink-100 bg-pink-50">
+                            <div className="mt-2 w-16 h-16 rounded-lg overflow-hidden border border-fabish-green/10 bg-fabish-cream">
                                 <img src={form.image} alt="preview" className="w-full h-full object-cover" onError={(e) => e.target.style.display = 'none'} />
                             </div>
                         )}
@@ -190,7 +190,7 @@ export default function ProductFormModal({ isOpen, product, onClose, onSubmit })
                                 step="0.1"
                                 value={form.rating}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent transition"
+                                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-fabish-text focus:outline-none focus:ring-2 focus:ring-fabish-lime focus:border-transparent transition"
                             />
                         </div>
                         <div>
@@ -203,14 +203,14 @@ export default function ProductFormModal({ isOpen, product, onClose, onSubmit })
                                 min="0"
                                 value={form.reviews}
                                 onChange={handleChange}
-                                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent transition"
+                                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-fabish-text focus:outline-none focus:ring-2 focus:ring-fabish-lime focus:border-transparent transition"
                             />
                         </div>
                     </div>
                 </form>
 
                 {/* Footer - CTA */}
-                <div className="px-6 py-4 border-t border-pink-100 flex gap-3">
+                <div className="px-6 py-4 border-t border-fabish-green/10 flex gap-3">
                     <button
                         type="button"
                         onClick={onClose}
@@ -222,7 +222,7 @@ export default function ProductFormModal({ isOpen, product, onClose, onSubmit })
                         type="submit"
                         onClick={handleSubmit}
                         disabled={loading}
-                        className="flex-1 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-pink-400 to-rose-500 hover:from-pink-500 hover:to-rose-600 shadow hover:shadow-md transition-all disabled:opacity-50"
+                        className="flex-1 px-4 py-2.5 rounded-xl text-sm font-semibold text-fabish-cream bg-gradient-to-r from-fabish-green to-fabish-text hover:from-fabish-lime hover:to-fabish-green shadow hover:shadow-md transition-all disabled:opacity-50"
                     >
                         {loading ? "Saving..." : isEdit ? "Save Changes" : "Add Product"}
                     </button>

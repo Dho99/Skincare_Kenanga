@@ -133,10 +133,10 @@ export default function AdminDashboard() {
 
             <main className="flex-1 flex flex-col overflow-hidden">
                 {/* Top Bar */}
-                <header className="bg-white border-b border-pink-100 px-8 py-5 flex items-center justify-between">
+                <header className="bg-white border-b border-fabish-green/10 px-8 py-5 flex items-center justify-between">
                     <div>
-                        <h1 className="text-xl font-bold text-gray-800">Product Catalog</h1>
-                        <p className="text-xs text-gray-400 mt-0.5">Manage your skincare products</p>
+                        <h1 className="text-xl font-bold font-serif text-fabish-text">Product Catalog</h1>
+                        <p className="text-xs text-fabish-green/60 mt-0.5">Manage your skincare products</p>
                     </div>
                     <div className="flex items-center gap-3">
                         <button
@@ -148,7 +148,7 @@ export default function AdminDashboard() {
                         </button>
                         <button
                             onClick={handleCreate}
-                            className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-pink-400 to-rose-500 hover:from-pink-500 hover:to-rose-600 shadow hover:shadow-md transition-all"
+                            className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-fabish-cream bg-gradient-to-r from-fabish-green to-fabish-text hover:from-fabish-lime hover:to-fabish-green shadow hover:shadow-md transition-all"
                         >
                             <Plus className="w-4 h-4" />
                             Add Product
@@ -159,31 +159,31 @@ export default function AdminDashboard() {
                 <div className="flex-1 overflow-y-auto px-8 py-6 space-y-6">
                     {/* Stats Cards */}
                     <div className="grid grid-cols-3 gap-4">
-                        <div className="bg-white rounded-2xl border border-pink-100 p-5 flex items-center gap-4">
-                            <div className="w-11 h-11 bg-pink-50 rounded-xl flex items-center justify-center">
-                                <Package className="w-5 h-5 text-pink-400" />
+                        <div className="bg-white rounded-2xl border border-fabish-green/10 p-5 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
+                            <div className="w-11 h-11 bg-fabish-cream rounded-xl flex items-center justify-center">
+                                <Package className="w-5 h-5 text-fabish-green" />
                             </div>
                             <div>
-                                <p className="text-2xl font-bold text-gray-800">{stats.total}</p>
-                                <p className="text-xs text-gray-400 font-medium">Total Products</p>
+                                <p className="text-2xl font-bold font-serif text-fabish-text">{stats.total}</p>
+                                <p className="text-xs text-fabish-green/60 font-medium">Total Products</p>
                             </div>
                         </div>
-                        <div className="bg-white rounded-2xl border border-yellow-100 p-5 flex items-center gap-4">
-                            <div className="w-11 h-11 bg-yellow-50 rounded-xl flex items-center justify-center">
-                                <Star className="w-5 h-5 text-yellow-400" />
+                        <div className="bg-white rounded-2xl border border-fabish-green/10 p-5 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
+                            <div className="w-11 h-11 bg-fabish-cream rounded-xl flex items-center justify-center">
+                                <Star className="w-5 h-5 text-yellow-500" />
                             </div>
                             <div>
-                                <p className="text-2xl font-bold text-gray-800">{stats.star}</p>
-                                <p className="text-xs text-gray-400 font-medium">Star Products</p>
+                                <p className="text-2xl font-bold font-serif text-fabish-text">{stats.star}</p>
+                                <p className="text-xs text-fabish-green/60 font-medium">Star Products</p>
                             </div>
                         </div>
-                        <div className="bg-white rounded-2xl border border-rose-100 p-5 flex items-center gap-4">
-                            <div className="w-11 h-11 bg-rose-50 rounded-xl flex items-center justify-center">
-                                <TrendingUp className="w-5 h-5 text-rose-400" />
+                        <div className="bg-white rounded-2xl border border-fabish-green/10 p-5 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
+                            <div className="w-11 h-11 bg-fabish-cream rounded-xl flex items-center justify-center">
+                                <TrendingUp className="w-5 h-5 text-fabish-lime" />
                             </div>
                             <div>
-                                <p className="text-2xl font-bold text-gray-800">{stats.bestseller}</p>
-                                <p className="text-xs text-gray-400 font-medium">Bestsellers</p>
+                                <p className="text-2xl font-bold font-serif text-fabish-text">{stats.bestseller}</p>
+                                <p className="text-xs text-fabish-green/60 font-medium">Bestsellers</p>
                             </div>
                         </div>
                     </div>
@@ -196,16 +196,16 @@ export default function AdminDashboard() {
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                             placeholder="Search products..."
-                            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-700 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-300 bg-white transition"
+                            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 text-sm text-fabish-text placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-fabish-lime bg-white transition"
                         />
                     </div>
 
                     {/* Product Table */}
                     {loading ? (
-                        <div className="bg-white rounded-2xl border border-pink-100 p-12 flex items-center justify-center">
+                        <div className="bg-white rounded-2xl border border-fabish-green/10 p-12 flex items-center justify-center">
                             <div className="flex flex-col items-center gap-3">
-                                <div className="w-8 h-8 border-4 border-pink-300 border-t-pink-500 rounded-full animate-spin" />
-                                <p className="text-sm text-gray-400">Loading products...</p>
+                                <div className="w-8 h-8 border-4 border-fabish-cream border-t-fabish-green rounded-full animate-spin" />
+                                <p className="text-sm text-fabish-green/60">Loading products...</p>
                             </div>
                         </div>
                     ) : (

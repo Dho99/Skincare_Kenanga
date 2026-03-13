@@ -13,7 +13,7 @@ export default function DeleteConfirmModal({ isOpen, product, onClose, onConfirm
             {/* Modal Card */}
             <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-sm mx-4 overflow-hidden">
                 {/* Header stripe */}
-                <div className="h-1 bg-gradient-to-r from-red-400 to-rose-500" />
+                <div className="h-1 bg-gradient-to-r from-red-500 to-red-600" />
 
                 <div className="p-6">
                     {/* Icon */}
@@ -42,7 +42,7 @@ export default function DeleteConfirmModal({ isOpen, product, onClose, onConfirm
                         <button
                             onClick={onConfirm}
                             disabled={loading}
-                            className="flex-1 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-red-400 to-rose-500 hover:from-red-500 hover:to-rose-600 shadow transition-all disabled:opacity-50"
+                            className="flex-1 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 shadow transition-all disabled:opacity-50"
                         >
                             {loading ? "Deleting..." : "Yes, Delete"}
                         </button>
